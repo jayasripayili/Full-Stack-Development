@@ -2,11 +2,9 @@
 ## HTML Input Element
 ### PlaceHolder
 ## JavaScript Built-in Functions
-< alert()
+> alert()
 ## DOM Properties
 > Checked
 ## DOM Manipulations
-. removeChild()
-
-
-. classList.toggle()
+> removeChild()
+- classList.toggle()
