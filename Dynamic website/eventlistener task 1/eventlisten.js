@@ -1,4 +1,5 @@
 let timerEl = document.getElementById("timer");
+let defuserEl = document.getElementById("defuser");
 
 let intervalId = setInterval(function() {
     countdown = countdown - 1;
@@ -8,3 +9,11 @@ let intervalId = setInterval(function() {
         clearInterval(intervalId);
     }
 }, 1000);
+
+defuserEl.addEventListener("keydown", function(event) {
+    let bombDefuserText = defuserEl.Value;
+    if(event.key === "Enter" && bombDefuserText === "defuse" && countdown !== 0) {
+        timerEl.textContent = "You did it!!";
+        clearInterval(intervalId);
+    }
+});
