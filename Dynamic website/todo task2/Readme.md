@@ -7,4 +7,6 @@
 ### Checked
 ## DOM Manipulations
 . removeChild()
+
+
 . classList.toggle()
