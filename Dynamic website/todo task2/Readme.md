@@ -2,9 +2,9 @@
 ## HTML Input Element
 ### PlaceHolder
 ## JavaScript Built-in Functions
-### alert()
+### . alert()
 ## DOM Properties
-### Checked
+### . Checked
 ## DOM Manipulations
 . removeChild()
 
