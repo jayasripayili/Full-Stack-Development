@@ -4,7 +4,7 @@
 ## JavaScript Built-in Functions
 ### . alert()
 ## DOM Properties
-### . Checked
+> Checked
 ## DOM Manipulations
 . removeChild()
 
