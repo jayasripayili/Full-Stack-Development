@@ -6,5 +6,5 @@
 ## DOM Properties
 > Checked
 ## DOM Manipulations
-> removeChild()
+- removeChild()
 - classList.toggle()
