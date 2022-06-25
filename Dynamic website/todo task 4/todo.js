@@ -18,17 +18,51 @@ saveTodoButton.onclick = function() {
     localStorage.setItem("todoList", JSON.stringify(todoList));
 }
 
+
+function onAddTodo() {
+    let userInputEl = document.getElementById("todoUserInput");
+    let userInputValue = userInputEl.value;
+
+    if (userInputValue === "") {
+        alert("Enter Valid Text");
+        return;
+    }
+
+    todosCount = todosCount + 1;
+
+    let newTodo = {
+        text: userInputValue,
+        uniqueNo: todosCount
+    };
+    todoList.push(newTodo);
+    createAndAppendTodo(newTodo);
+    userInputEl.value = "";
+}
+
+addTodoButton.onclick = function() {
+    onAddTodo();
+}
+
+function onDeleteTodo(todoId) {
+    let todoEl = document.getElementById(todoId);
+    todoItemsContainerEl.removeChild(todoEl);
+
+    let deleteIndex = todoList.findIndex(function(eachTodo) {
+        let eachTodoId = "todo" + eachTodo.uniqueNo;
+        if (eachTodoId === todoId) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    todoList.splice(deleteIndex, 1);
+}
+
 function onTodoStatusChanged(checkboxId, labelId) {
     let checkboxEl = document.getElementById(checkboxId);
     let labelEl = document.getElementById(labelId);
 
     labelEl.classList.toggle("checked");
-}
-
-function onDeleteTodo(todoId) {
-    let todoEl = document.getElementById(todoId);
-
-    todoItemsContainerEl.removeChild(todoEl);
 }
 
 function createAndAppendTodo(todo) {
@@ -79,28 +113,4 @@ function createAndAppendTodo(todo) {
 
 for (let todo of todoList) {
     createAndAppendTodo(todo);
-}
-
-function onAddTodo() {
-    let userInputEl = document.getElementById("todoUserInput");
-    let userInputValue = userInputEl.value;
-
-    if (userInputValue === "") {
-        alert("Enter Valid Text");
-        return;
-    }
-
-    todosCount = todosCount + 1;
-
-    let newTodo = {
-        text: userInputValue,
-        uniqueNo: todosCount
-    };
-    todoList.push(newTodo);
-    createAndAppendTodo(newTodo);
-    userInputValue = "";
-}
-
-addTodoButton.onclick = function() {
-    onAddTodo();
 }
