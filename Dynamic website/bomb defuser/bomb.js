@@ -6,7 +6,7 @@ let countdown = 10;
 let intervalId = setInterval(function() {
     countdown = countdown - 1;
     timerEl.textContent = countdown;
-    if (timerEl === 0) {
+    if (countdown === 0) {
         timerEl.textContent = "BOOM!!";
         clearInterval(intervalId);
     }
