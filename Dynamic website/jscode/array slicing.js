@@ -25,19 +25,20 @@ function readLine() {
 
 /* Please do not modify anything above this line */
 
-function joinArrayValues(myArray, separator) {
-    let result = myArray.join(separator);
-    
-    return result;
+function getSliceFromArray(myArray, startIndex, endIndex) {
+  let result = myArray.slice(startIndex, endIndex);
+  
+  return result;
 }
 
 /* Please do not modify anything below this line */
 
 function main() {
   let myArray = JSON.parse(readLine().replace(/'/g, '"'));
-  let separator =  readLine();
+  let startIndex =  JSON.parse(readLine());
+  let endIndex =  JSON.parse(readLine());
   
-  let newString = joinArrayValues(myArray, separator);
+  let slicedArray = getSliceFromArray(myArray, startIndex, endIndex);
   
-  console.log(newString);
+  console.log(slicedArray);
 }
